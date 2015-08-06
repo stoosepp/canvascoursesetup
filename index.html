@@ -1,0 +1,101 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <title>Canvas Course Publish Tool</title>
+  <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="publishstyle.css" />
+</head>
+<body>
+<script type="text/javascript">
+    function submitForm(action)
+    {
+        document.getElementById('collect').action = action;
+        document.getElementById('collect').submit();
+    }
+</script>
+
+
+
+<div class="container">
+<h1 class="publish-title">CANVAS COURSE PUBLISH TOOL</h1>
+  <p class="publish-title">Publish your courses with this simple tool!</p>
+  <hr>
+	<!-- <form id="collect" onsubmit="return startLogPrint();" method="post" action="publishcourses.php"> -->
+	<form id="collect" onsubmit="return startLogPrint();" method="post" action="publishcourses.php">
+
+	<div class="left-box">
+    
+     <label for="domain">Your canvas domain:</label>
+    <input type="text" id="domain" name="domain" /><br />
+    <label for="token">Canvas Admin Token:</label><br />
+    <input type="text" id="token" name="token" /><br />
+    <a class="helper-text" href="http://guides.instructure.com/m/4214/l/40399-how-do-i-obtain-an-api-access-token" target="_blank">Don't know how to get a token?</a><br/>
+    <label for="quarter">Quarter</label><br />
+    <select name="quarter">
+	    <option value="">No Quarter</option>
+	    <option value="F14_">Fall 2014</option>
+	    <option value="W15_">Winter 2015</option>
+	    <option value="S15_">Spring 2015</option>
+	    <option value="SU15_">Summer 2015</option>
+	    <option value="F15_">Fall 2015</option>
+	    <option value="W16_">Winter 2016</option>
+	    <option value="S16_">Spring 2016</option>
+	    <option value="SU16_">Summer 2016</option>
+	    <option value="F16_">Fall 2016</option>    
+    </select><br />
+    <label for="items">Course Item Numbers to Publish (separate by commas, no spaces, no comma at the end):<br />(example: 1234,2345,3456)</label><br />
+    <textarea id="items" name="items" /></textarea><br />
+    <label for="welcomemessage">Welcome Message (in HTML):</label><br />
+    <textarea id="welcomemessage" name="welcomemessage" /></textarea><br />
+
+  </div>
+  
+<div class="right-box">
+	<i class="fa fa-thumbs-up fa-5x"></i>
+<!--
+	<input type="submit" value="Publish Courses" name="submit" />
+	<br/>
+	<input type="submit" value="Check Course Status" name="submit" />
+-->
+	<!--New Buttons-->
+	<input type="button" onclick="submitForm('publishcourses.php')" value="Publish Courses" />
+<br/>
+<br/>
+	<input type="button" onclick="submitForm('checkcourses.php')" value="Check Course Status" />
+	
+</div>
+</form>
+</div>
+
+<div id="sample-welcome">
+  <p>Sample Welcome message - You can paste this into the welcome message above if you like.</p>
+  <code>
+&lt;div&gt;Dear Students,&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;Welcome to Spring Quarter 2015!&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;This course is still under construction and will commence on April 7th, 2015.&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;Please be aware that this course is available for your exploration, but your instructor may not respond until next week.&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;Remember that attendance is recorded for online and hybrid courses, so be sure to log in and contribute to the course (if your instructor requires it) by the first or second day of the quarter, otherwise a fellow student on a waiting list will be given your space in the class.&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;Feel free to look around the course, and familiarize yourself with the Canvas, BTC&amp;rsquo;s system for online and hybrid courses. If you have never used it before, please see the &amp;lsquo;Canvas 101&amp;rsquo; course located in the &amp;lsquo;Help&amp;rsquo; menu in the top right hand side of your screen. If you have any &amp;nbsp;questions, please contact your instructor using the same menu.&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;If you have any questions about eLearning or technology at BTC, please visit&amp;nbsp;&lt;a href="http://elearning.btc.ctc.edu"&gt;http://elearning.btc.ctc.edu/&lt;/a&gt;&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;Best of luck in your studies this quarter!&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;Kind Regards,&lt;/div&gt;
+&lt;div&gt;&amp;nbsp;&lt;/div&gt;
+&lt;div&gt;Stoo Sepp&lt;/div&gt;
+&lt;div&gt;Director of eLearning&lt;/div&gt;
+&lt;div&gt;Bellingham Technical College&lt;/div&gt;
+&lt;div&gt;&lt;a href="mailto:elearning@btc.ctc.edu"&gt;elearning@btc.ctc.edu&lt;/a&gt;&lt;/div&gt;
+  </code>
+</div>
+
+</body>
+</html>
